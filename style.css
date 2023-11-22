@@ -46,7 +46,9 @@ main {
 
 h1 {
 
-    font-size: 5rem;
+    display: inline-block;
+
+    font-size: 6rem;
 
     margin-block: 2rem;
 
@@ -55,7 +57,7 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
 
-    background-image: linear-gradient(56deg, #ae7cd5 0%, #897ce9 100%);
+    background-image: linear-gradient(56deg, #FF8636 0%, #897ce9 100%);
 
 }
 
@@ -72,8 +74,12 @@ img {
 
     font-size: 1.5rem;
 
-    margin-bottom: 2rem;
+    /* margin-bottom: 1rem; */
 
+}
+
+#about h2 {
+    margin: auto;    
 }
 
 #about small {
@@ -112,15 +118,30 @@ img {
 
 }
 
+.projects {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.projects > h2 {
+
+    font-size: 2.5rem;
+
+}
+
 .subsites {
 
     display: grid;
+    width: 100%;
 
     grid-template-columns: repeat(2, 1fr);
 
     gap: 20px;
-
-    justify-items: center;
 
 }
 
@@ -142,6 +163,12 @@ img {
     overflow: hidden;
 
     transition: scale 100ms ease-in-out;
+
+}
+
+.card > h3 {
+
+    margin: 0;
 
 }
 
