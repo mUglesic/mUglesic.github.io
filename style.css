@@ -219,6 +219,15 @@ a.card {
 
 }
 
+#github_logo {
+
+    height: 64px;
+    aspect-ratio: 1;
+
+    filter: invert(1);
+
+}
+
 @media (prefers-color-scheme: dark) {
 
     body {
@@ -245,6 +254,10 @@ a.card {
         background-color: rgba(255, 255, 255, 0.01);
         border: 2px #faf9f6 solid;
 
+    }
+
+    #github_logo {
+        filter: invert(0);
     }
 
 }
