@@ -1,6 +1,12 @@
 
 :root {
 
+    --gradient-offset: 0%;
+
+}
+
+:root {
+
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.4;
     font-weight: 400;
@@ -17,7 +23,8 @@
 
 body {
 
-    background-color: #faf9f6;
+    /* background-color: #faf9f6; */
+    background: #f7f1e8;
     color: #15222e;
 
     display: flex;
@@ -44,6 +51,14 @@ main {
 
 }
 
+@property --gradient-offset {
+
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+
+}
+
 h1 {
 
     display: inline-block;
@@ -57,7 +72,15 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
 
-    background-image: linear-gradient(56deg, #FF8636 0%, #897ce9 100%);
+    background-image: linear-gradient(56deg, #FF8636 var(--gradient-offset), #897ce9 calc(100% + var(--gradient-offset)));
+
+    transition: --gradient-offset 2000ms;
+
+}
+
+h1:hover {
+
+    --gradient-offset: 20%;
 
 }
 
@@ -226,13 +249,22 @@ a.card {
 
     filter: invert(1);
 
+    transition: scale 250ms;
+
+}
+
+#github_logo:hover {
+
+    scale: 1.1;
+
 }
 
 @media (prefers-color-scheme: dark) {
 
     body {
 
-        background-color: #15222e;
+        /* background-color: #15222e; */
+        background: linear-gradient(-65deg, #15222e 25%, #1a2938 50%, #15222e 75%);
         color: #faf9f6;
 
     }
@@ -251,13 +283,38 @@ a.card {
 
     .card {
 
-        background-color: rgba(255, 255, 255, 0.01);
+        /* background-color: rgba(255, 255, 255, 0.01); */
+        background-color: #15222e;
         border: 2px #faf9f6 solid;
 
     }
 
     #github_logo {
         filter: invert(0);
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .funky > span {
+
+        translate: 0px 0px;
+
+        animation: none;
+
+    }
+
+    .card:hover {
+
+        scale: 1;
+
+    }
+
+    .card > img {
+
+        transition: scale 200ms ease, border-radius 250ms ease-in-out;
+    
     }
 
 }
